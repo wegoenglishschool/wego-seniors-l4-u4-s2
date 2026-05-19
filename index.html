@@ -86,23 +86,24 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 .slide-content{flex:1;min-height:0;display:flex;flex-direction:column;padding:14px 16px;gap:12px;overflow:hidden;}
 
 /* WARM-UP: MASTER OF EXCUSES */
-.excuse-layout{flex:1;display:flex;gap:14px;min-height:0;}
-.excuse-scenarios{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;min-height:0;}
-.excuse-card{background:rgba(255,255,255,0.07);border:2px solid rgba(255,255,255,0.15);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;cursor:pointer;transition:all 0.2s;position:relative;}
+.excuse-layout{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;}
+.excuse-top{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;min-height:0;}
+.excuse-card{background:rgba(255,255,255,0.07);border:2px solid rgba(255,255,255,0.15);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:all 0.2s;position:relative;}
 .excuse-card:hover{border-color:var(--yellow);background:rgba(241,196,5,0.08);}
 .excuse-card.revealed{border-color:var(--orange);background:rgba(255,107,53,0.1);}
-.excuse-card-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--deep);flex-shrink:0;background:var(--yellow);}
-.excuse-card-header{display:flex;align-items:center;gap:10px;}
-.excuse-card-title{font-size:15px;font-weight:900;color:white;line-height:1.2;}
-.excuse-card-scenario{font-size:14px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.4;}
-.excuse-card-reveal{font-size:13px;font-weight:700;color:var(--orange);display:none;margin-top:4px;font-style:italic;}
+.excuse-card-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--deep);flex-shrink:0;background:var(--yellow);}
+.excuse-card-header{display:flex;align-items:center;gap:12px;}
+.excuse-card-title{font-size:17px;font-weight:900;color:white;line-height:1.2;}
+.excuse-card-scenario{font-size:15px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.5;flex:1;}
+.excuse-card-reveal{font-size:13px;font-weight:700;color:var(--orange);display:none;margin-top:4px;font-style:italic;border-top:1px solid rgba(255,107,53,0.3);padding-top:8px;}
 .excuse-card.revealed .excuse-card-reveal{display:block;}
-.excuse-rules{flex:0 0 220px;display:flex;flex-direction:column;gap:10px;}
-.excuse-rules-title{font-family:'Space Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:1px;text-transform:uppercase;font-weight:900;}
-.excuse-rule{background:rgba(255,255,255,0.06);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.4;border-left:3px solid var(--orange);}
-.excuse-rule strong{color:var(--orange);}
-.excuse-banned{background:rgba(229,57,53,0.15);border:1.5px solid rgba(229,57,53,0.4);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:700;color:white;line-height:1.4;}
-.excuse-banned span{color:#ff5252;text-decoration:line-through;}
+.excuse-bottom{flex-shrink:0;display:flex;align-items:stretch;gap:10px;}
+.excuse-example{flex:1;background:rgba(255,255,255,0.06);border:1.5px solid rgba(241,196,5,0.25);border-radius:14px;padding:14px 18px;}
+.excuse-example-title{font-family:'Space Mono',monospace;font-size:10px;color:var(--yellow);letter-spacing:1.5px;text-transform:uppercase;font-weight:900;margin-bottom:8px;}
+.excuse-example-text{font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;font-style:italic;}
+.excuse-example-text strong{color:var(--yellow);font-style:normal;}
+.excuse-nav-btn{flex-shrink:0;background:var(--yellow);border:none;color:var(--deep);font-family:'Space Mono',monospace;font-size:12px;font-weight:900;padding:0 22px;border-radius:14px;cursor:pointer;letter-spacing:0.5px;transition:opacity 0.2s;white-space:nowrap;}
+.excuse-nav-btn:hover{opacity:0.85;}
 
 /* SLANG PRESENTATION */
 .slangs-grid{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;min-height:0;}
@@ -215,74 +216,89 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
   <div class="section-header">
     <span class="sh-badge" style="background:#7919ef;color:white;">WARM-UP</span>
     <span class="sh-title">The Master of Excuses</span>
-    <div class="sh-right"><button class="lp-btn" onclick="openLP('warmup')">&#128196; Lesson Plan</button><span class="sh-book">Book p. None &middot; 8 min</span></div>
+    <div class="sh-right"><button class="lp-btn" onclick="openLP('warmup')">&#128196; Lesson Plan</button><span class="sh-book">8 min</span></div>
   </div>
   <div class="slide-content">
     <div class="excuse-layout">
-      <div class="excuse-scenarios">
 
+      <!-- PAGE 1: scenarios 1-6 -->
+      <div class="excuse-top" id="excuse-page-1">
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">1</div>
-            <div class="excuse-card-title">You forgot my birthday!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">1</div><div class="excuse-card-title">You forgot my birthday!</div></div>
           <div class="excuse-card-scenario">Your friend is devastated. You forgot their birthday completely. Give a creative excuse!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "But why didn't you call me at least?"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "But why didn't you call me at least?"</div>
         </div>
-
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">2</div>
-            <div class="excuse-card-title">You were 2 hours late!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">2</div><div class="excuse-card-title">You were 2 hours late!</div></div>
           <div class="excuse-card-scenario">You arrived 2 hours late to an important dinner. Your host is furious. Explain yourself!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "Two hours?! What could possibly take that long?"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "Two hours?! What could possibly take that long?"</div>
         </div>
-
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">3</div>
-            <div class="excuse-card-title">You didn't do the homework!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">3</div><div class="excuse-card-title">You didn't do the homework!</div></div>
           <div class="excuse-card-scenario">The teacher is waiting for your homework. You didn't do it. Be creative — no boring excuses!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "That's the third time this month! Really?"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "That's the third time this month! Really?"</div>
         </div>
-
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">4</div>
-            <div class="excuse-card-title">You ate the last slice!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">4</div><div class="excuse-card-title">You ate the last slice!</div></div>
           <div class="excuse-card-scenario">You ate the last slice of cake that was saved for someone else. They are very upset!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "I specifically told you that was mine!"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "I specifically told you that was mine!"</div>
         </div>
-
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">5</div>
-            <div class="excuse-card-title">You missed the flight!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">5</div><div class="excuse-card-title">You missed the flight!</div></div>
           <div class="excuse-card-scenario">The whole group missed the flight because of you. Everyone is at the airport, furious!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "We had to buy new tickets because of you!"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "We had to buy new tickets because of you!"</div>
         </div>
-
         <div class="excuse-card" onclick="this.classList.toggle('revealed')">
-          <div class="excuse-card-header">
-            <div class="excuse-card-num">6</div>
-            <div class="excuse-card-title">You lost the hotel key!</div>
-          </div>
+          <div class="excuse-card-header"><div class="excuse-card-num">6</div><div class="excuse-card-title">You lost the hotel key!</div></div>
           <div class="excuse-card-scenario">You lost the hotel room key and now everyone is locked out at midnight. Explain!</div>
-          <div class="excuse-card-reveal">&#128161; Press for follow-up: "It's midnight! How did this happen?"</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "It's midnight! How did this happen?"</div>
         </div>
+      </div>
 
+      <!-- PAGE 2: scenarios 7-12 -->
+      <div class="excuse-top" id="excuse-page-2" style="display:none;">
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">7</div><div class="excuse-card-title">You broke my sunglasses!</div></div>
+          <div class="excuse-card-scenario">You borrowed your friend's expensive sunglasses on vacation and came back with them broken. They are not happy!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "Those were $200! What exactly happened?"</div>
+        </div>
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">8</div><div class="excuse-card-title">You spent all the cash!</div></div>
+          <div class="excuse-card-scenario">You were in charge of the group's vacation money. You spent it all in one day. Everyone is broke!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "We still have 4 days left! What were you thinking?"</div>
+        </div>
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">9</div><div class="excuse-card-title">You gave wrong directions!</div></div>
+          <div class="excuse-card-scenario">You were the navigator. Because of your directions, the group got completely lost for 3 hours. Explain!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "We missed the tour we paid for! How do you explain that?"</div>
+        </div>
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">10</div><div class="excuse-card-title">You booked the wrong hotel!</div></div>
+          <div class="excuse-card-scenario">You were in charge of reservations. You booked a hotel in the wrong city. The group just found out!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "The hotel is 200 km away! How is that even possible?"</div>
+        </div>
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">11</div><div class="excuse-card-title">You forgot the passports!</div></div>
+          <div class="excuse-card-scenario">You were responsible for carrying the group's passports. You left them at home. You're at the airport!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "The flight boards in 40 minutes! What do we do now?"</div>
+        </div>
+        <div class="excuse-card" onclick="this.classList.toggle('revealed')">
+          <div class="excuse-card-header"><div class="excuse-card-num">12</div><div class="excuse-card-title">You posted that photo!</div></div>
+          <div class="excuse-card-scenario">You posted an embarrassing vacation photo of your friend online without asking. They just saw it!</div>
+          <div class="excuse-card-reveal">&#128161; Follow-up: "300 people liked it already! Take it down NOW!"</div>
+        </div>
       </div>
-      <div class="excuse-rules">
-        <div class="excuse-rules-title">&#127919; Game Rules</div>
-        <div class="excuse-rule">Teacher acts as the <strong>offended person</strong> and assigns a scenario card to a student.</div>
-        <div class="excuse-rule">Student gives a <strong>creative, dramatic, or absurd</strong> excuse. Teacher presses with follow-up questions.</div>
-        <div class="excuse-rule">If the excuse is <strong>bad</strong>, the class votes <strong>thumbs down</strong> and the student tries again.</div>
-        <div class="excuse-banned">&#128683; Banned excuses:<br><span>"traffic"</span> &nbsp;&nbsp; <span>"I fell asleep"</span></div>
+
+      <!-- BOTTOM BAR: example + next button -->
+      <div class="excuse-bottom">
+        <div class="excuse-example">
+          <div class="excuse-example-title">&#128161; Example Answer</div>
+          <div class="excuse-example-text"><strong>Scenario: "You were 2 hours late!"</strong><br>
+          "OK, listen — I know this sounds crazy, but on my way here I saw a dog stuck in a tree. A tree! I have no idea how it got there. I called animal control but they said it would take an hour, so I waited because I couldn't just leave the poor thing there. Then, when they finally arrived, the dog jumped down on its own and ran away. I chased it for 20 minutes to make sure it was safe. By the time I got back to my car, there was a ticket on the windshield. I had to argue with the officer, who turned out to be my neighbor's cousin — long story. I'm so sorry, but honestly, what would YOU have done?"</div>
+        </div>
+        <button class="excuse-nav-btn" onclick="toggleExcusePage()">&#8594; Next 6 Scenarios</button>
       </div>
+
     </div>
   </div>
 </div>
@@ -688,6 +704,24 @@ function goToSlide(n){
 
 function prevSlide(){ goToSlide(current-1); }
 function nextSlide(){ goToSlide(current+1); }
+
+let excusePage = 1;
+function toggleExcusePage(){
+  const p1 = document.getElementById('excuse-page-1');
+  const p2 = document.getElementById('excuse-page-2');
+  const btn = event.currentTarget;
+  if(excusePage === 1){
+    p1.style.display = 'none';
+    p2.style.display = '';
+    btn.textContent = '\u2190 Back to 1\u20136';
+    excusePage = 2;
+  } else {
+    p2.style.display = 'none';
+    p1.style.display = '';
+    btn.textContent = '\u2192 Next 6 Scenarios';
+    excusePage = 1;
+  }
+}
 
 document.addEventListener('keydown', e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown') nextSlide();
