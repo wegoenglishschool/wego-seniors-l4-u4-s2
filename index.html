@@ -112,6 +112,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 .slang-phrase{font-size:22px;font-weight:900;color:white;line-height:1.15;}
 .slang-meaning{font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.4;margin-top:2px;}
 .slang-example{font-size:12px;font-style:italic;color:rgba(255,255,255,0.7);line-height:1.4;margin-top:4px;border-top:1px solid rgba(255,255,255,0.15);padding-top:8px;}
+.slang-img{width:100%;flex:1;min-height:0;object-fit:cover;border-radius:10px;margin-bottom:6px;}
 
 /* SLANG PRACTICE: SITUATION MATCH */
 .situation-layout{flex:1;display:flex;gap:14px;min-height:0;}
@@ -298,6 +299,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
       <div class="slang-card" style="background:rgba(0,87,255,0.3);border:2px solid rgba(0,87,255,0.6);">
         <div class="slang-num">1</div>
+        <img class="slang-img" src="imgs/slang_01_total_blast.png" alt="It was a total blast">
         <div class="slang-phrase">It was a total blast!</div>
         <div class="slang-meaning">It was extremely fun and exciting</div>
         <div class="slang-example">"The trip to Thailand? It was a total blast!"</div>
@@ -305,6 +307,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
       <div class="slang-card" style="background:rgba(0,200,83,0.25);border:2px solid rgba(0,200,83,0.5);">
         <div class="slang-num">2</div>
+        <img class="slang-img" src="imgs/slang_02_so_worth_it.png" alt="It was so worth it">
         <div class="slang-phrase">It was so worth it!</div>
         <div class="slang-meaning">The effort or cost was completely justified</div>
         <div class="slang-example">"The 12-hour flight? It was so worth it!"</div>
@@ -312,6 +315,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
       <div class="slang-card" style="background:rgba(241,196,5,0.2);border:2px solid rgba(241,196,5,0.5);">
         <div class="slang-num">3</div>
+        <img class="slang-img" src="imgs/slang_03_hit_the_road.png" alt="Hit the road">
         <div class="slang-phrase">Hit the road!</div>
         <div class="slang-meaning">To start a trip or leave a place</div>
         <div class="slang-example">"We packed our bags and hit the road at 5 AM!"</div>
@@ -319,6 +323,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
       <div class="slang-card" style="background:rgba(233,30,140,0.25);border:2px solid rgba(233,30,140,0.5);">
         <div class="slang-num">4</div>
+        <img class="slang-img" src="imgs/slang_04_go_with_flow.png" alt="Go with the flow">
         <div class="slang-phrase">Go with the flow!</div>
         <div class="slang-meaning">To be flexible and adapt to whatever happens</div>
         <div class="slang-example">"No plan? No problem — we just went with the flow!"</div>
@@ -326,6 +331,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
       <div class="slang-card" style="background:rgba(255,107,53,0.25);border:2px solid rgba(255,107,53,0.5);">
         <div class="slang-num">5</div>
+        <img class="slang-img" src="imgs/slang_05_no_brainer.png" alt="It's a no-brainer">
         <div class="slang-phrase">It's a no-brainer!</div>
         <div class="slang-meaning">An obvious decision that requires no thinking</div>
         <div class="slang-example">"Go to Cancún or stay home? It's a no-brainer!"</div>
