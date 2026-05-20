@@ -87,14 +87,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
 /* WARM-UP: MASTER OF EXCUSES */
 .excuse-layout{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;}
-.excuse-top{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;min-height:0;}
+.excuse-top{flex:1;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr);gap:12px;min-height:0;}
 .excuse-card{background:rgba(255,255,255,0.07);border:2px solid rgba(255,255,255,0.15);border-radius:18px;padding:20px 22px;display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:all 0.2s;position:relative;}
 .excuse-card:hover{border-color:var(--yellow);background:rgba(241,196,5,0.08);}
 .excuse-card.revealed{border-color:var(--orange);background:rgba(255,107,53,0.1);}
 .excuse-card-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--deep);flex-shrink:0;background:var(--yellow);}
 .excuse-card-header{display:flex;align-items:center;gap:12px;}
-.excuse-card-title{font-size:24px;font-weight:900;color:white;line-height:1.2;}
-.excuse-card-scenario{font-size:22px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.6;flex:1;}
+.excuse-card-title{font-size:28px;font-weight:900;color:white;line-height:1.2;}
+.excuse-card-scenario{font-size:26px;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.5;flex:1;}
 .excuse-card-reveal{font-size:13px;font-weight:700;color:var(--orange);display:none;margin-top:4px;font-style:italic;border-top:1px solid rgba(255,107,53,0.3);padding-top:8px;}
 .excuse-card.revealed .excuse-card-reveal{display:block;}
 .excuse-bottom{flex-shrink:0;display:flex;align-items:stretch;gap:10px;}
