@@ -117,9 +117,9 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 
 /* SLANG PRACTICE: SITUATION MATCH */
 .situation-layout{flex:1;display:flex;gap:14px;min-height:0;}
-.situation-slangs-bar{flex-shrink:0;display:flex;flex-direction:column;gap:8px;width:200px;}
+.situation-slangs-bar{flex-shrink:0;display:flex;flex-direction:column;justify-content:space-between;width:200px;padding:6px 0;}
 .situation-slangs-title{font-family:'Space Mono',monospace;font-size:10px;color:var(--yellow);letter-spacing:1px;text-transform:uppercase;font-weight:900;}
-.situation-slang-chip{padding:10px 14px;border-radius:12px;font-size:15px;font-weight:900;color:white;text-align:center;}
+.situation-slang-chip{padding:14px 14px;border-radius:12px;font-size:16px;font-weight:900;color:white;text-align:center;}
 .situation-cards{flex:1;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(2,1fr);gap:8px;min-height:0;}
 .situation-card{border-radius:14px;overflow:hidden;position:relative;cursor:pointer;border:2px solid rgba(255,255,255,0.1);transition:transform 0.2s,border-color 0.2s;display:flex;flex-direction:column;}
 .situation-card:hover{transform:scale(1.03);border-color:var(--light);}
@@ -128,7 +128,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 .situation-card-answer{background:rgba(5,4,106,0.95);padding:8px;font-size:12px;font-weight:900;color:var(--yellow);text-align:center;flex-shrink:0;display:none;}
 .situation-card.revealed .situation-card-answer{display:block;}
 .situation-card.revealed{border-color:var(--green);}
-.situation-card-desc{position:absolute;bottom:28px;left:0;right:0;padding:6px 8px;font-size:11px;font-weight:700;color:white;text-align:center;background:linear-gradient(transparent,rgba(5,4,106,0.85));}
+.situation-card-desc{position:absolute;bottom:28px;left:0;right:0;padding:8px 10px;font-size:15px;font-weight:700;color:white;text-align:center;background:linear-gradient(transparent,rgba(5,4,106,0.92));}
 
 /* SPEAKING: VACATION DEBATE */
 .debate-layout{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;}
