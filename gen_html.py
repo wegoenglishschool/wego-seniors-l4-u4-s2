@@ -147,13 +147,28 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 .debate-instruction strong{color:var(--yellow);}
 
 /* EXIT TICKET: LISTENING COMPREHENSION */
-.listening-layout{flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;}
-.listening-video-bar{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.07);border-radius:12px;padding:10px 16px;flex-shrink:0;}
+.listening-layout{flex:1;display:flex;flex-direction:column;gap:0;min-height:0;}
+.et-tabs{display:flex;gap:8px;flex-shrink:0;margin-bottom:10px;}
+.et-tab{padding:10px 24px;border-radius:10px 10px 0 0;font-family:'Space Mono',monospace;font-size:12px;font-weight:900;cursor:pointer;border:none;letter-spacing:0.5px;transition:all 0.2s;}
+.et-tab.active{background:var(--yellow);color:var(--deep);}
+.et-tab:not(.active){background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);}
+.et-panel{display:none;flex:1;flex-direction:column;min-height:0;}
+.et-panel.active{display:flex;}
 .listening-video-icon{font-size:24px;}
 .listening-video-text{flex:1;}
 .listening-video-title{font-size:15px;font-weight:900;color:white;}
 .listening-video-url{font-size:12px;color:var(--teal);font-family:'Space Mono',monospace;}
 .listening-video-link{background:var(--teal);color:var(--deep);border:none;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block;font-family:'Barlow',sans-serif;}
+.et-cell{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);text-align:center;padding:16px 10px;font-size:13px;font-style:italic;cursor:pointer;border:1px solid rgba(255,255,255,0.08);transition:all 0.25s;vertical-align:middle;}
+.et-cell:hover{background:rgba(255,255,255,0.1);}
+.et-cell.revealed{background:rgba(0,87,255,0.2);color:white;font-style:normal;font-weight:700;font-size:14px;}
+.et-cell.revealed::before{content:attr(data-ans);}
+.et-cell:not(.revealed)::before{content:'\1F441 Click';}
+.oral-q{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:background 0.2s;}
+.oral-q:hover{background:rgba(255,255,255,0.1);}
+.oral-q-text{font-size:14px;font-weight:700;color:rgba(255,255,255,0.9);}
+.oral-ans{display:none;margin-top:6px;font-size:14px;color:var(--yellow);font-weight:600;border-top:1px solid rgba(255,255,255,0.1);padding-top:6px;}
+.oral-ans.show{display:block;}
 .listening-chart{flex:1;overflow:auto;min-height:0;}
 .listening-table{width:100%;border-collapse:collapse;font-size:14px;}
 .listening-table th{padding:10px 14px;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:700;border-bottom:2px solid rgba(241,196,5,0.3);}
@@ -577,73 +592,131 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
   <div class="section-header">
     <span class="sh-badge" style="background:#F1C405;color:#1a0040;">EXIT TICKET</span>
     <span class="sh-title">Listening Comprehension: Travel Experiences</span>
-    <div class="sh-right"><button class="lp-btn" onclick="openLP('exit')">&#128196; Lesson Plan</button><span class="sh-book">Book p. None &middot; 11 min</span></div>
+    <div class="sh-right"><button class="lp-btn" onclick="openLP('exit')">&#128196; Lesson Plan</button><span class="sh-book">&#127916; <a href="https://www.youtube.com/watch?v=pUaDJwh9Q-8" target="_blank" style="color:var(--teal);text-decoration:none;">Open Video</a></span></div>
   </div>
   <div class="slide-content">
     <div class="listening-layout">
 
-      <div class="listening-video-bar">
-        <div class="listening-video-icon">&#127916;</div>
-        <div class="listening-video-text">
-          <div class="listening-video-title">ESL Intermediate English &mdash; "Travel Experiences"</div>
-          <div class="listening-video-url">youtube.com/watch?v=pUaDJwh9Q-8</div>
-        </div>
-        <a class="listening-video-link" href="https://www.youtube.com/watch?v=pUaDJwh9Q-8" target="_blank">&#9654; Open Video</a>
+      <!-- TABS -->
+      <div class="et-tabs">
+        <button class="et-tab active" onclick="switchEtTab('chart',this)">&#128203; Listening Chart</button>
+        <button class="et-tab" onclick="switchEtTab('oral',this)">&#127908; Oral Comprehension</button>
       </div>
 
-      <div class="listening-step-bar">
-        <div class="listening-step">
-          <div class="listening-step-num" style="background:var(--yellow);">1</div>
-          <div class="listening-step-text"><strong>Listening:</strong> Play the video. Students follow along and take mental notes using the chart as a guide.</div>
-        </div>
-        <div class="listening-step">
-          <div class="listening-step-num" style="background:var(--teal);">2</div>
-          <div class="listening-step-text"><strong>Oral Comprehension:</strong> Teacher asks targeted questions about each day to different students. Everyone answers at least one.</div>
-        </div>
-      </div>
-
-      <div class="listening-chart">
-        <table class="listening-table">
+      <!-- PANEL 1: LISTENING CHART -->
+      <div class="et-panel active" id="et-chart">
+        <table style="width:100%;border-collapse:collapse;flex:1;">
           <thead>
             <tr>
-              <th style="background:rgba(5,4,106,0.8);color:rgba(255,255,255,0.5);text-align:left;width:160px;">Category</th>
-              <th style="background:rgba(0,87,255,0.3);color:var(--yellow);text-align:center;">Day 1</th>
-              <th style="background:rgba(0,87,255,0.2);color:var(--yellow);text-align:center;">Day 2</th>
-              <th style="background:rgba(0,87,255,0.3);color:var(--yellow);text-align:center;">Day 3</th>
-              <th style="background:rgba(0,87,255,0.2);color:var(--yellow);text-align:center;">Day 4</th>
+              <th style="background:rgba(5,4,106,0.8);color:rgba(255,255,255,0.5);text-align:left;padding:14px 16px;font-size:15px;width:22%;">Category</th>
+              <th style="background:rgba(0,87,255,0.35);color:var(--yellow);text-align:center;padding:14px;font-size:16px;">Day 1</th>
+              <th style="background:rgba(0,87,255,0.2);color:var(--yellow);text-align:center;padding:14px;font-size:16px;">Day 2</th>
+              <th style="background:rgba(0,87,255,0.35);color:var(--yellow);text-align:center;padding:14px;font-size:16px;">Day 3</th>
+              <th style="background:rgba(0,87,255,0.2);color:var(--yellow);text-align:center;padding:14px;font-size:16px;">Day 4</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="row-label">Where was he?</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
+              <td style="background:rgba(5,4,106,0.6);color:rgba(255,255,255,0.7);padding:16px;font-size:15px;font-weight:700;border-bottom:1px solid rgba(255,255,255,0.08);">Where was he?</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="At a beach resort in Cancún">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="On a city tour in Mexico City">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="At an ancient ruins site (Teotihuacán)">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Back at the hotel, packing to leave">&#128065; Click</td>
             </tr>
             <tr>
-              <td class="row-label">How was the experience?</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
+              <td style="background:rgba(5,4,106,0.6);color:rgba(255,255,255,0.7);padding:16px;font-size:15px;font-weight:700;border-bottom:1px solid rgba(255,255,255,0.08);">How was the experience?</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Relaxing and beautiful — the water was crystal clear">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Exciting but very tiring — lots of walking">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Fascinating and breathtaking — the pyramids were huge">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Bittersweet — happy but sad to leave">&#128065; Click</td>
             </tr>
             <tr>
-              <td class="row-label">Positive or negative?</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
+              <td style="background:rgba(5,4,106,0.6);color:rgba(255,255,255,0.7);padding:16px;font-size:15px;font-weight:700;border-bottom:1px solid rgba(255,255,255,0.08);">Positive or negative?</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="✅ Positive">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="⚠️ Mixed (positive but exhausting)">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="✅ Very positive">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="✅ Positive overall">&#128065; Click</td>
             </tr>
             <tr>
-              <td class="row-label">What did he like / dislike?</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
-              <td class="day-col-alt" style="text-align:center;color:rgba(255,255,255,0.3);font-style:italic;">&#8212;</td>
+              <td style="background:rgba(5,4,106,0.6);color:rgba(255,255,255,0.7);padding:16px;font-size:15px;font-weight:700;">What did he like / dislike?</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Liked: the beach &amp; sunset. Disliked: too many tourists">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Liked: the food &amp; markets. Disliked: sore feet!">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Liked: the history &amp; views. Disliked: the heat">&#128065; Click</td>
+              <td class="et-cell" onclick="this.classList.toggle('revealed')" data-ans="Liked: the whole trip. Disliked: it was too short!">&#128065; Click</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- PANEL 2: ORAL COMPREHENSION -->
+      <div class="et-panel" id="et-oral">
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;flex:1;">
+
+          <div style="background:rgba(0,87,255,0.15);border:1.5px solid rgba(0,87,255,0.4);border-radius:14px;padding:16px;">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 1</div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">Where was he on Day 1?</div>
+              <div class="oral-ans">At a beach resort in Cancún.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">Was the beach experience positive or negative?</div>
+              <div class="oral-ans">Positive — the water was crystal clear and beautiful.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">What did he dislike about Day 1?</div>
+              <div class="oral-ans">There were too many tourists at the beach.</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(0,200,83,0.12);border:1.5px solid rgba(0,200,83,0.35);border-radius:14px;padding:16px;">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 2</div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">What did he do on Day 2?</div>
+              <div class="oral-ans">He went on a city tour in Mexico City.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">How was Day 2 — was it only positive?</div>
+              <div class="oral-ans">Mixed — it was exciting but very tiring because of all the walking.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">What did he enjoy most on Day 2?</div>
+              <div class="oral-ans">The food and the local markets.</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(241,196,5,0.1);border:1.5px solid rgba(241,196,5,0.35);border-radius:14px;padding:16px;">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 3</div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">Where did he go on Day 3?</div>
+              <div class="oral-ans">To the ancient ruins at Teotihuacán — the pyramids.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">How did he describe the pyramids?</div>
+              <div class="oral-ans">Fascinating and breathtaking — they were huge.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">What was the one negative thing about Day 3?</div>
+              <div class="oral-ans">The heat — it was very hot at the ruins.</div>
+            </div>
+          </div>
+
+          <div style="background:rgba(233,30,140,0.1);border:1.5px solid rgba(233,30,140,0.35);border-radius:14px;padding:16px;">
+            <div style="font-family:'Space Mono',monospace;font-size:11px;color:#e91e8c;letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 4</div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">What was he doing on Day 4?</div>
+              <div class="oral-ans">He was back at the hotel, packing to leave.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">How did he feel about leaving?</div>
+              <div class="oral-ans">Bittersweet — happy about the trip but sad it was over.</div>
+            </div>
+            <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
+              <div class="oral-q-text">Overall — was the trip worth it?</div>
+              <div class="oral-ans">Yes! He said the whole trip was amazing — it was too short!</div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -690,6 +763,13 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 const slides = document.querySelectorAll('.slide');
 const labels = ['Cover','Warm-up','Slang','Slang Practice','Speaking','Exit Ticket','Homework'];
 let current = 0;
+
+function switchEtTab(panel, btn){
+  document.querySelectorAll('.et-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.et-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('et-'+panel).classList.add('active');
+  btn.classList.add('active');
+}
 
 function buildNav(){
   const pills = document.getElementById('navPills');
