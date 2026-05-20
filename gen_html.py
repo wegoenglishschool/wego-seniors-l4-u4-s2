@@ -546,9 +546,28 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
         </div>
 
       </div>
-      <div class="debate-instruction">
-        &#128205; <strong>Use:</strong> Past BE &middot; Travel adjectives &middot; Intensifiers &middot; <strong>At least 2 slangs</strong> &nbsp;|&nbsp; Class votes for the most convincing argument!
+      <div class="debate-instruction" style="display:flex;align-items:center;gap:14px;">
+        <span>&#128205; <strong>Use:</strong> Past BE &middot; Travel adjectives &middot; Intensifiers &middot; <strong>At least 2 slangs</strong> &nbsp;|&nbsp; Class votes for the most convincing argument!</span>
+        <button onclick="document.getElementById('exampleArgModal').style.display='flex'" style="flex-shrink:0;background:var(--orange);border:none;color:white;font-family:'Space Mono',monospace;font-size:11px;font-weight:900;padding:8px 16px;border-radius:10px;cursor:pointer;letter-spacing:0.5px;white-space:nowrap;">&#128161; Example Argument</button>
       </div>
+
+  <!-- EXAMPLE ARGUMENT MODAL -->
+  <div id="exampleArgModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
+    <div style="background:#0a0a2e;border:2px solid var(--orange);border-radius:20px;padding:32px 36px;max-width:640px;width:90%;position:relative;">
+      <button onclick="document.getElementById('exampleArgModal').style.display='none'" style="position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,0.5);font-size:22px;cursor:pointer;">&times;</button>
+      <div style="font-family:'Space Mono',monospace;font-size:10px;color:var(--orange);letter-spacing:1.5px;text-transform:uppercase;font-weight:900;margin-bottom:12px;">&#128161; Example Argument</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:6px;">Destination: <strong style="color:white;">Paris</strong> vs Tokyo</div>
+      <div style="font-size:16px;color:rgba(255,255,255,0.9);line-height:1.7;font-style:italic;border-left:3px solid var(--orange);padding-left:16px;margin-top:12px;">
+        "OK, so I was in Paris last summer and it was <strong style="color:var(--yellow);">absolutely incredible</strong>. The food was amazing — we went to this tiny café near the Eiffel Tower and honestly, <strong style="color:var(--yellow);">it was so worth it</strong>. We didn't have a plan at all — we just <strong style="color:var(--yellow);">went with the flow</strong> and discovered the most beautiful streets. The atmosphere was romantic, the museums were fascinating, and the people were surprisingly friendly. Paris was not just a city — it was an experience. Tokyo is great, but Paris? <strong style="color:var(--yellow);">It was a total blast</strong> from start to finish!"
+      </div>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:rgba(241,196,5,0.2);border:1px solid var(--yellow);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--yellow);">Past BE ✓</span>
+        <span style="background:rgba(241,196,5,0.2);border:1px solid var(--yellow);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--yellow);">Adjectives ✓</span>
+        <span style="background:rgba(241,196,5,0.2);border:1px solid var(--yellow);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--yellow);">Intensifiers ✓</span>
+        <span style="background:rgba(255,107,53,0.2);border:1px solid var(--orange);border-radius:8px;padding:4px 10px;font-size:11px;font-weight:700;color:var(--orange);">3 Slangs ✓</span>
+      </div>
+    </div>
+  </div>
     </div>
   </div>
 </div>
@@ -792,7 +811,7 @@ const LP_DATA = {
     title:'Vacation Debate',
     meta:'Book p. None · 15 min',
     sections:[
-      {title:'Activity', body:'The teacher projects 5 pairs of contrasting travel destinations side-by-side on screen. The 5 slangs remain visible on screen. The teacher calls two students and assigns one destination to each. Each student defends their destination using Past BE, adjectives, intensifiers, and at least two slangs from the session. The rest of the class votes on who had the most convincing argument. Rotate pairs until everyone has participated.'},
+      {title:'Activity', body:'The teacher projects 5 pairs of contrasting travel destinations side-by-side on screen. The 5 slangs remain visible on screen. The teacher calls two students and assigns one destination to each. Give students 2–3 minutes to prepare and write down their arguments before presenting to the class. Each student defends their destination using Past BE, adjectives, intensifiers, and at least two slangs from the session. The rest of the class votes on who had the most convincing argument. Rotate pairs until everyone has participated.'},
       {title:'Learning Goal', body:'Students combine Past BE, adjectives, intensifiers, and multiple slangs in a spontaneous oral debate.'},
       {title:'Teacher Cues', body:'"[Name 1], you are defending Paris. [Name 2], you are defending Tokyo. Remember to use Past BE, adjectives, and AT LEAST TWO slangs! [Name 1], go first!"'}
     ],
