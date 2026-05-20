@@ -655,64 +655,64 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
           <div style="background:rgba(0,87,255,0.15);border:1.5px solid rgba(0,87,255,0.4);border-radius:14px;padding:16px;">
             <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 1</div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">Where was he on Day 1?</div>
-              <div class="oral-ans">At a beach resort in Cancún.</div>
+              <div class="oral-q-text">If YOU were at that beach, which slang from today would you use to describe it?</div>
+              <div class="oral-ans">Possible: <em>"It was a total blast!"</em> or <em>"It was so worth it!"</em> — accept any slang with a reason.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">Was the beach experience positive or negative?</div>
-              <div class="oral-ans">Positive — the water was crystal clear and beautiful.</div>
+              <div class="oral-q-text">Do you think he planned Day 1 in advance, or did he just go with the flow?</div>
+              <div class="oral-ans">He seemed to go with the flow — he didn’t mention a specific plan, just enjoying the beach.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">What did he dislike about Day 1?</div>
-              <div class="oral-ans">There were too many tourists at the beach.</div>
+              <div class="oral-q-text">Would you prefer a beach day like Day 1 or a city tour like Day 2? Why?</div>
+              <div class="oral-ans">Open answer — encourage students to use adjectives and at least one slang in their response.</div>
             </div>
           </div>
 
           <div style="background:rgba(0,200,83,0.12);border:1.5px solid rgba(0,200,83,0.35);border-radius:14px;padding:16px;">
             <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 2</div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">What did he do on Day 2?</div>
-              <div class="oral-ans">He went on a city tour in Mexico City.</div>
+              <div class="oral-q-text">He was tired after Day 2. What do you think he did that evening at the hotel?</div>
+              <div class="oral-ans">Open inference — expected: rested, ordered room service, slept early. Encourage creative answers.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">How was Day 2 — was it only positive?</div>
-              <div class="oral-ans">Mixed — it was exciting but very tiring because of all the walking.</div>
+              <div class="oral-q-text">Was Day 2 a “hit the road” kind of day? Explain using the slang.</div>
+              <div class="oral-ans">Yes — <em>"Hit the road"</em> means to start moving/traveling. Day 2 was all about exploring the city on foot.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">What did he enjoy most on Day 2?</div>
-              <div class="oral-ans">The food and the local markets.</div>
+              <div class="oral-q-text">Have you ever been to a city where you walked SO much your feet hurt? Tell us!</div>
+              <div class="oral-ans">Open personal answer — encourage Past BE: <em>"I was in… and it was…"</em></div>
             </div>
           </div>
 
           <div style="background:rgba(241,196,5,0.1);border:1.5px solid rgba(241,196,5,0.35);border-radius:14px;padding:16px;">
             <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 3</div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">Where did he go on Day 3?</div>
-              <div class="oral-ans">To the ancient ruins at Teotihuacán — the pyramids.</div>
+              <div class="oral-q-text">He said the ruins were “breathtaking.” Can you think of a synonym for that adjective?</div>
+              <div class="oral-ans">Possible synonyms: stunning, awe-inspiring, incredible, spectacular, jaw-dropping.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">How did he describe the pyramids?</div>
-              <div class="oral-ans">Fascinating and breathtaking — they were huge.</div>
+              <div class="oral-q-text">Was visiting ancient ruins “so worth it” for him? How do you know?</div>
+              <div class="oral-ans">Yes — he described it very positively despite the heat, which shows the experience outweighed the discomfort.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">What was the one negative thing about Day 3?</div>
-              <div class="oral-ans">The heat — it was very hot at the ruins.</div>
+              <div class="oral-q-text">Would you call Day 3 a “no-brainer” choice for the trip? Why or why not?</div>
+              <div class="oral-ans">Open — <em>"It’s a no-brainer"</em> = obvious choice. Students should justify with adjectives from the session.</div>
             </div>
           </div>
 
           <div style="background:rgba(233,30,140,0.1);border:1.5px solid rgba(233,30,140,0.35);border-radius:14px;padding:16px;">
             <div style="font-family:'Space Mono',monospace;font-size:11px;color:#e91e8c;letter-spacing:1px;font-weight:900;margin-bottom:10px;">&#128197; DAY 4</div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">What was he doing on Day 4?</div>
-              <div class="oral-ans">He was back at the hotel, packing to leave.</div>
+              <div class="oral-q-text">If you could add a Day 5 to his trip, where would you send him and why?</div>
+              <div class="oral-ans">Open creative answer — encourage: <em>"I would send him to… because it was… / it is…"</em> + slangs.</div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">How did he feel about leaving?</div>
-              <div class="oral-ans">Bittersweet — happy about the trip but sad it was over.</div>
+              <div class="oral-q-text">Which day of his trip was a total blast? Which was the least exciting? Justify.</div>
+              <div class="oral-ans">Open — students should use <em>"It was a total blast"</em> and contrast with adjectives like <em>exhausting, tiring, overwhelming.</em></div>
             </div>
             <div class="oral-q" onclick="this.querySelector('.oral-ans').classList.toggle('show')">
-              <div class="oral-q-text">Overall — was the trip worth it?</div>
-              <div class="oral-ans">Yes! He said the whole trip was amazing — it was too short!</div>
+              <div class="oral-q-text">Overall, was this trip “so worth it”? Would YOU go on this exact same trip?</div>
+              <div class="oral-ans">Open personal opinion — target: <em>"It was so worth it because…"</em> or <em>"I wouldn’t go because…"</em> + adjectives + slangs.</div>
             </div>
           </div>
 
