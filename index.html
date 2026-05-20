@@ -100,7 +100,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
 .excuse-bottom{flex-shrink:0;display:flex;align-items:stretch;gap:10px;}
 .excuse-example{flex:1;background:rgba(255,255,255,0.06);border:1.5px solid rgba(241,196,5,0.25);border-radius:14px;padding:14px 18px;}
 .excuse-example-title{font-family:'Space Mono',monospace;font-size:10px;color:var(--yellow);letter-spacing:1.5px;text-transform:uppercase;font-weight:900;margin-bottom:8px;}
-.excuse-example-text{font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6;font-style:italic;}
+.excuse-example-text{font-size:17px;color:rgba(255,255,255,0.85);line-height:1.6;font-style:italic;}
 .excuse-example-text strong{color:var(--yellow);font-style:normal;}
 .excuse-nav-btn{flex-shrink:0;background:var(--yellow);border:none;color:var(--deep);font-family:'Space Mono',monospace;font-size:12px;font-weight:900;padding:0 22px;border-radius:14px;cursor:pointer;letter-spacing:0.5px;transition:opacity 0.2s;white-space:nowrap;}
 .excuse-nav-btn:hover{opacity:0.85;}
@@ -294,7 +294,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--deep);font-fam
         <div class="excuse-example">
           <div class="excuse-example-title">&#128161; Example Answer</div>
           <div class="excuse-example-text"><strong>Scenario: "You were 2 hours late!"</strong><br>
-          "OK, listen — I know this sounds crazy, but on my way here I saw a dog stuck in a tree. A tree! I have no idea how it got there. I called animal control but they said it would take an hour, so I waited because I couldn't just leave the poor thing there. Then, when they finally arrived, the dog jumped down on its own and ran away. I chased it for 20 minutes to make sure it was safe. By the time I got back to my car, there was a ticket on the windshield. I had to argue with the officer, who turned out to be my neighbor's cousin — long story. I'm so sorry, but honestly, what would YOU have done?"</div>
+          "OK, I know this sounds crazy — on my way here I found a dog stuck in a tree. I waited for animal control, but the dog jumped down on its own and ran away! I chased it to make sure it was safe, then got a parking ticket arguing with the officer. I'm so sorry, but what would YOU have done?"</div>
         </div>
         <button class="excuse-nav-btn" onclick="toggleExcusePage()">&#8594; Next 6 Scenarios</button>
       </div>
